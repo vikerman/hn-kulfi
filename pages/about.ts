@@ -8,14 +8,18 @@ export function render() {
   return html`
     <h1>About this site</h1>
 
+    <p>This is a simple Hacker News clone, built with Kulfi.</p>
+
     <p>
-      This is a simple Hacker News clone, built with Kulfi, an application
-      framework for web components.
+      Kulfi aims to be a framework to build high performance applications using
+      HTML and web components and without need for complex tooling.
     </p>
 
     <p>
-      Kulfi aims to be a framework to build high performance applications that
-      are HTML first and doesn't use complex tooling to achieve it.
+      This example was copied from the Svelte version at
+      <a href="https://github.com/sveltejs/hn.svelte.dev"
+        >https://github.com/sveltejs/hn.svelte.dev/</a
+      >
     </p>
 
     <p>

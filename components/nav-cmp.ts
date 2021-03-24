@@ -5,7 +5,7 @@ import { customElement } from 'lit/decorators.js';
 
 @customElement('nav-cmp')
 export class NavCmp extends LitElement {
-  styles = css`
+  static styles = css`
     nav {
       /* background-color: rgba(255, 102, 0, 0.05); */
       border-bottom: 1px solid #ff6600;
@@ -73,13 +73,13 @@ export class NavCmp extends LitElement {
 
   render() {
     return html`<nav>
-      <!-- img
+      <img
         alt="Kulfi Hacker News logo"
         class="icon"
         src="/static/favicon.png"
-      -->
+      />
       <ul>
-        <li><a href="/top/1">top</a></li>
+        <li><a href="/top/1" class="selected">top</a></li>
         <li><a href="/new/1">new</a></li>
         <li><a href="/show/1">show</a></li>
         <li><a href="/ask/1">ask</a></li>

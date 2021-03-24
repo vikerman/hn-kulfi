@@ -1,6 +1,6 @@
 ## Kulfi Hacker News
 
-Hacker News example built on top of Kulfi.
+Hacker News example built using Kulfi.
 
 Forked from the Svelte version at https://github.com/sveltejs/hn.svelte.dev/
 
@@ -8,3 +8,7 @@ Forked from the Svelte version at https://github.com/sveltejs/hn.svelte.dev/
 
 - `start` runs your app for development, reloading on file changes
 - `lint` runs the linter for your project
+
+## Icons
+
+Icons made by [Freepik](https://www.freepik.com) from [FlatIcon](www.flaticon.com).
