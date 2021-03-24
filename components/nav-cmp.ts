@@ -79,7 +79,7 @@ export class NavCmp extends LitElement {
         src="/static/favicon.png"
       />
       <ul>
-        <li><a href="/top/1" class="selected">top</a></li>
+        <li><a href="/" class="selected">top</a></li>
         <li><a href="/new/1">new</a></li>
         <li><a href="/show/1">show</a></li>
         <li><a href="/ask/1">ask</a></li>
