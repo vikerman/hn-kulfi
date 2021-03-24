@@ -1,11 +1,5 @@
-import { css, html } from 'lit';
+import { html } from 'lit';
 
-export const styles = css`
-  h1 {
-    color: red;
-  }
-`;
-
-export function page() {
+export function render() {
   return html`<h1>Hello World!!!</h1>`;
 }
