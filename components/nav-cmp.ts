@@ -1,7 +1,9 @@
 import 'kulfi/hydrate-support.js';
 
 import { css, html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
+import { inject } from 'kulfi/inject.js';
+import { Router } from 'kulfi/router.js';
 
 @customElement('nav-cmp')
 export class NavCmp extends LitElement {
@@ -71,6 +73,22 @@ export class NavCmp extends LitElement {
     }
   `;
 
+  @property()
+  path = '';
+
+  connectedCallback() {
+    super.connectedCallback!();
+    inject<Router>('ROUTER').then(r => {
+      r.getController(this, 'path');
+    });
+  }
+
+  private isSelected(p: string) {
+    // Return selected if first part of segment match.
+    const segments = this.path.split('/');
+    return segments.length > 1 && segments[1] === p ? 'selected' : '';
+  }
+
   render() {
     return html`<nav>
       <img
@@ -79,13 +97,15 @@ export class NavCmp extends LitElement {
         src="/static/favicon.png"
       />
       <ul>
-        <li><a href="/" class="selected">top</a></li>
-        <li><a href="/new/1">new</a></li>
-        <li><a href="/show/1">show</a></li>
-        <li><a href="/ask/1">ask</a></li>
-        <li><a href="/jobs/1">jobs</a></li>
+        <li><a href="/" class="${this.isSelected('')}">top</a></li>
+        <li><a href="/new/1" class="${this.isSelected('new')}">new</a></li>
+        <li><a href="/show/1" class="${this.isSelected('show')}">show</a></li>
+        <li><a href="/ask/1" class="${this.isSelected('ask')}">ask</a></li>
+        <li><a href="/jobs/1" class="${this.isSelected('jobs')}">jobs</a></li>
 
-        <li class="about"><a href="/about">about</a></li>
+        <li class="about">
+          <a class="${this.isSelected('about')}" href="/about">about</a>
+        </li>
       </ul>
     </nav>`;
   }

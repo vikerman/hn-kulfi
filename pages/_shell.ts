@@ -3,9 +3,9 @@ import { html } from 'lit';
 import '../components/nav-cmp.js';
 import '../components/theme-selector.js';
 
-export function render() {
+export function render(path: string) {
   return html`
-    <nav-cmp></nav-cmp>
+    <nav-cmp path=${path}></nav-cmp>
     <main>
       <!--PAGE-->
     </main>
