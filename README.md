@@ -4,10 +4,14 @@ Hacker News example built using Kulfi.
 
 Forked from the Svelte version at https://github.com/sveltejs/hn.svelte.dev/
 
-## Scripts
+## Quick Start
 
-- `start` runs your app for development, reloading on file changes
-- `lint` runs the linter for your project
+```sh
+npm i
+npm start
+```
+
+Make edits to code and the browser reloads.
 
 ## Icons
 

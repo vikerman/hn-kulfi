@@ -1,5 +1,6 @@
 /* eslint-disable lit/no-invalid-html */
 import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { User } from '../../common/user.js';
 
 export function head() {
@@ -33,7 +34,7 @@ export function render(params: { name: string }, user: User) {
       <!-- TODO: properly sanitize and display the HTML in about -->
       ${user.about
         ? html`<div class="about">
-            <p>${user.about}</p>
+            <p>${unsafeHTML(user.about)}</p>
           </div> `
         : ''}
     </div>`;
