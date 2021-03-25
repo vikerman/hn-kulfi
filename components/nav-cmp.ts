@@ -2,8 +2,7 @@ import 'kulfi/hydrate-support.js';
 
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { inject } from 'kulfi/inject.js';
-import { Router } from 'kulfi/router.js';
+import { bind } from 'kulfi/bind.js';
 
 @customElement('nav-cmp')
 export class NavCmp extends LitElement {
@@ -78,9 +77,7 @@ export class NavCmp extends LitElement {
 
   connectedCallback() {
     super.connectedCallback!();
-    inject<Router>('ROUTER').then(r => {
-      r.getController(this, 'path');
-    });
+    bind('LOCATION', this, 'path');
   }
 
   private isSelected(p: string) {
