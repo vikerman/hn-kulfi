@@ -11,8 +11,8 @@ export function render() {
     <p>This is a simple Hacker News clone, built with Kulfi.</p>
 
     <p>
-      Kulfi aims to be a framework to build high performance applications using
-      HTML and web components and without need for complex tooling.
+      Kulfi aims to be a framework for building high performance web
+      applications using HTML and web components.
     </p>
 
     <p>

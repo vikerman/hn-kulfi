@@ -9,7 +9,7 @@ export function render(path: string) {
     <main>
       <!--PAGE-->
     </main>
-    <theme-selector></theme-selector>
+    <theme-selector data-eager></theme-selector>
     <script async type="module" src="/js/components/nav-cmp.js"></script>
     <script async type="module" src="/js/components/theme-selector.js"></script>
   `;
