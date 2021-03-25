@@ -11,4 +11,4 @@ Forked from the Svelte version at https://github.com/sveltejs/hn.svelte.dev/
 
 ## Icons
 
-Icons made by [Freepik](https://www.freepik.com) from [FlatIcon](www.flaticon.com).
+Kulfi Icons made by [Freepik](https://www.freepik.com) from [FlatIcon](www.flaticon.com).
