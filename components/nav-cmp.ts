@@ -81,6 +81,9 @@ export class NavCmp extends LitElement {
   }
 
   private isSelected(p: string) {
+    if (p === 'top' && this.path === '/') {
+      return 'selected';
+    }
     // Return selected if first part of segment match.
     const segments = this.path.split('/');
     return segments.length > 1 && segments[1] === p ? 'selected' : '';
@@ -94,7 +97,7 @@ export class NavCmp extends LitElement {
         src="/static/favicon.png"
       />
       <ul>
-        <li><a href="/" class="${this.isSelected('')}">top</a></li>
+        <li><a href="/" class="${this.isSelected('top')}">top</a></li>
         <li><a href="/new/1" class="${this.isSelected('new')}">new</a></li>
         <li><a href="/show/1" class="${this.isSelected('show')}">show</a></li>
         <li><a href="/ask/1" class="${this.isSelected('ask')}">ask</a></li>
