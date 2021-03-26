@@ -2,6 +2,8 @@ import { css, html, TemplateResult } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { Item } from '../../common/item.js';
 
+import '../../components/comment-toggle.js';
+
 export const styles = css`
   h1 {
     font-weight: 500;
@@ -86,21 +88,23 @@ export function head() {
 function comment(c: Item): TemplateResult {
   if (!c.deleted) {
     return html`
-      <article class="comment">
-        <div class="meta-bar" data-action="toggleComment">
-          <span class="meta"
-            ><a href="/user/${c.user}">${c.user}</a> ${c.time_ago}</span
-          >
-        </div>
+      <comment-toggle>
+        <article class="comment">
+          <div class="meta-bar">
+            <span class="meta"
+              ><a href="/user/${c.user}">${c.user}</a> ${c.time_ago}</span
+            >
+          </div>
 
-        <div class="body">${unsafeHTML(c.content)}</div>
+          <div class="body">${unsafeHTML(c.content)}</div>
 
-        ${c.comments.length > 0
-          ? html`<ul class="children">
-              ${c.comments.map(child => html`<li>${comment(child)}</li>`)}
-            </ul>`
-          : ''}
-      </article>
+          ${c.comments.length > 0
+            ? html`<ul class="children">
+                ${c.comments.map(child => html`<li>${comment(child)}</li>`)}
+              </ul>`
+            : ''}
+        </article>
+      </comment-toggle>
     `;
   }
   return html``;
@@ -126,5 +130,9 @@ export function render(params: { id: string }, item: Item) {
         ${item.comments ? item.comments.map(i => comment(i)) : ''}
       </div>
     </div>
-    <script async type="module" src="/js/scripts/toggleComment.js"></script> `;
+    <script
+      async
+      type="module"
+      src="/js/components/comment-toggle.js"
+    ></script> `;
 }
