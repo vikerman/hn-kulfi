@@ -82,7 +82,7 @@ export const styles = css`
 
 export function head() {
   // TODO: There is a bug here in lit ssr if params.id is used here in title.
-  return html`<title>Svelte Hacker News</title>`;
+  return html`<title>Comments - Kulfi Hacker News</title>`;
 }
 
 function comment(c: Item): TemplateResult {
