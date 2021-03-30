@@ -1,6 +1,6 @@
 ## Kulfi Hacker News
 
-Hacker News example built using Kulfi.
+Hacker News example built using Kulfi - http://github.com/vikerman/kulfi.
 
 Forked from the Svelte version at https://github.com/sveltejs/hn.svelte.dev/
 
